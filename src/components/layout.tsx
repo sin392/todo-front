@@ -13,12 +13,12 @@ const Layout: React.FC = ({ children }) => {
 	}, [])
 
 	return (
-		<div style={Style}>
+		<div style={styles.Container}>
 			<Header />
 			{/* <Navbar /> */}
 			<Content>{children}</Content>
 			{/* <Footer /> */}
-			<Affix offsetBottom={0} style={AffixStyle}>
+			<Affix offsetBottom={0} style={styles.Affix}>
 				<Button
 					type="primary"
 					icon={<UpOutlined />}
@@ -29,15 +29,16 @@ const Layout: React.FC = ({ children }) => {
 	)
 }
 
-const Style: React.CSSProperties = {
-	background: 'rgb(255, 255, 255)',
-	// background: '#ececec',
-}
-
-const AffixStyle: React.CSSProperties = {
-	position: 'fixed',
-	bottom: '10px',
-	right: '10px',
+const styles: { [key: string]: React.CSSProperties } = {
+	Container: {
+		background: '#ffffff',
+		// background: '#ececec',
+	},
+	Affix: {
+		position: 'fixed',
+		bottom: '10px',
+		right: '10px',
+	},
 }
 
 export default Layout
