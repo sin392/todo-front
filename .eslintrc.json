@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+	"plugins": [
+		//....
+		"prettier"
+	],
+	"extends": [
+		"next/core-web-vitals",
+		"prettier/@typescript-eslint", // Prettierでカバーできるルールを無効化
+		"plugin:prettier/recommended" // Prettierのお勧めルールセットを適用
+	]
 }
